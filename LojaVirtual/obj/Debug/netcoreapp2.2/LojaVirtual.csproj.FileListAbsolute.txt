@@ -30,3 +30,4 @@ C:\Users\dev\Documents\Udemy\LojaVirtual\LojaVirtual\LojaVirtual\obj\Debug\netco
 C:\Users\dev\Documents\Udemy\LojaVirtual\LojaVirtual\LojaVirtual\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\dev\Documents\Udemy\LojaVirtual\LojaVirtual\LojaVirtual\obj\Debug\netcoreapp2.2\Razor\Views\Home\CadastroCliente.cshtml.g.cs
 C:\Users\dev\Documents\Udemy\LojaVirtual\LojaVirtual\LojaVirtual\obj\Debug\netcoreapp2.2\Razor\Views\Home\CarrinhoCompras.cshtml.g.cs
+C:\Users\dev\Documents\Udemy\LojaVirtual\LojaVirtual\LojaVirtual\obj\Debug\netcoreapp2.2\Razor\Views\Home\ContatoAcao.cshtml.g.cs
