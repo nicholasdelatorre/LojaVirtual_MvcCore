@@ -1,4 +1,4 @@
-﻿
+﻿@model LojaVirtual.Models.NewsletterEmail
 @{
     ViewData["Title"] = "Index";
 }
@@ -159,6 +159,51 @@
         </div> <!-- row.// -->
     </div>
 
-
 </main>
+
+@using (Html.BeginForm(null, null, null, FormMethod.Post, false, new { @action = @Url.Action("Index", "Home") + "#formulario" }))
+{
+    <div class="container" id="formulario">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="row">
+                    <div class="col-sm-9 pr-0">
+                        @if (ViewData["MSG_S"] != null)
+                        {
+                            <p class="alert alert-success">@ViewData["MSG_S"]</p>
+
+                        }
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-9 col-sm-12 pr-md-0 pr-sm-2 mb-md-0">
+                        <div class="form-group">
+                            <label for="nome">Cadastre seu e-mail para receber promoções:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                </div>
+                                @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <span class="text-danger">@Html.ValidationMessageFor(m => m.Email)</span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12  pl-md-0 pl-sm-2">
+                        <label style="opacity:0">0</label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <button class="subscribe btn btn-primary btn-block border-dark" type="submit"> Cadastrar-se </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
 
