@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LojaVirtual.Repositories.Interfaces
 {
-    interface IClienteRepository
+    public interface IClienteRepository
     {
         Cliente Login(string email, string senha);
         void Cadastrar(Cliente cliente);
         void Atualizar(Cliente cliente);
         void Excluir(int id);
         Cliente ObterCliente(int id);
-        List<Cliente> ObterTodosClientes();
+        IEnumerable<Cliente> ObterTodosClientes();
     }
 }

@@ -46,7 +46,7 @@ namespace LojaVirtual.Repositories
             return _banco.Clientes.Find(id);
         }
 
-        public List<Cliente> ObterTodosClientes()
+        public IEnumerable<Cliente> ObterTodosClientes()
         {
             List<Cliente> clientes = _banco.Clientes.ToList();
             return clientes;

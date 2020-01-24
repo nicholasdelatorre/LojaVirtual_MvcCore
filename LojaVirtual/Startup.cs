@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LojaVirtual.DataBase;
+using LojaVirtual.Libraries.Login;
+using LojaVirtual.Libraries.Session;
+using LojaVirtual.Repositories;
+using LojaVirtual.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -27,6 +31,23 @@ namespace LojaVirtual
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /*
+             * Padrão Repository
+             */
+            services.AddHttpContextAccessor();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<INewsletterRepository, NewsletterRepository>();
+
+            /*
+            *  Session - Configuração
+            */
+            services.AddMemoryCache(); // Guarda dados na memória
+            services.AddSession(options => { 
+
+            });
+
+            services.AddScoped<Sessao>();
+            services.AddScoped<LoginSessaoCliente>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -53,6 +74,9 @@ namespace LojaVirtual
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSession();
+
 
             app.UseMvc(routes =>
             {
