@@ -1,4 +1,4 @@
-﻿@model LojaVirtual.Models.NewsletterEmail
+﻿@model NewsletterEmail
 @{
     ViewData["Title"] = "Index";
 }
@@ -166,19 +166,15 @@
     <div class="container" id="formulario">
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
+                @if (TempData["MSG_S"] != null)
+                {
+                    <p class="alert alert-success">@TempData["MSG_S"]</p>
+
+                }
                 <div class="row">
-                    <div class="col-sm-9 pr-0">
-                        @if (ViewData["MSG_S"] != null)
-                        {
-                            <p class="alert alert-success">@ViewData["MSG_S"]</p>
 
-                        }
-
-                    </div>
-                </div>
-
-                <div class="row">
                     <div class="col-md-9 col-sm-12 pr-md-0 pr-sm-2 mb-md-0">
+
                         <div class="form-group">
                             <label for="nome">Cadastre seu e-mail para receber promoções:</label>
                             <div class="input-group">

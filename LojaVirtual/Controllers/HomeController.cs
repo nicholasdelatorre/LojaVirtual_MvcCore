@@ -20,6 +20,7 @@ namespace LojaVirtual.Controllers
             _ctx = ctx;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -33,7 +34,7 @@ namespace LojaVirtual.Controllers
                 _ctx.NewsletterEmails.Add(newsletter);
                 _ctx.SaveChanges();
 
-                ViewData["MSG_S"] = "E-mail cadastrado, agora você vai receber promoções especiais no seu e-mail. Fique atento as novidades";
+                TempData["MSG_S"] = "E-mail cadastrado, agora você vai receber promoções especiais no seu e-mail. Fique atento as novidades";
 
                 return RedirectToAction(nameof(Index));
             }
